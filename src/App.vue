@@ -17,7 +17,6 @@
 </template>
 
 <script>
-// import HomePage from './components/home/HomePage.vue';
 import RobotBuilder from './components/build/RobotBuilder.vue';
 
 export default {
