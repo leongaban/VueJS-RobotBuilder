@@ -14,7 +14,7 @@
         <button class="next-selector">&#9660;</button>
       </div>
       <div class="center part">
-        <img v-bind:src="availableParts.torso[0].src" title="torso"/>
+        <img v-bind:src="availableParts.torsos[0].src" title="torso"/>
         <button class="prev-selector">&#9668;</button>
         <button class="next-selector">&#9658;</button>
       </div>
@@ -42,7 +42,7 @@ console.log('availableParts', availableParts);
 export default {
   name: 'RobotBuilder',
   data() {
-    return availableParts;
+    return { availableParts };
   },
 };
 </script>
