@@ -4,6 +4,7 @@
       <div class="top part">
         <div class="robot-name">
           {{selectedRobot.head.title}}
+          <span v-if="selectNext.head.onSale" class="sale">Sale!</span>
         </div>
         <img :src="selectedRobot.head.src" title="head"/>
         <button class="prev-selector" @click="selectPrevious('heads')">&#9668;</button>
@@ -39,6 +40,7 @@
 
 <script>
 import availableParts from '../../data/parts';
+import './_robotBuilder.scss';
 
 function getPreviousValidIndex(index, length) {
   const deprecatedIndex = index - 1;
@@ -89,7 +91,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-  @import "./_robotBuilder.scss";
-</style>
