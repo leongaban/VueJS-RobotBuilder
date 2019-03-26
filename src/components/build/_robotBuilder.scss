@@ -1,3 +1,15 @@
+.content {
+  position: relative;
+}
+
+.add-cart {
+  position: absolute;
+  right: 30px;
+  padding: 3px;
+  width: 220px;
+  font-size: 16px;
+}
+
 .part {
   position: relative;
   width:165px;
@@ -103,4 +115,14 @@
 
 .sale {
   color: red;
+}
+
+td, th {
+  text-align: left;
+  padding: 5px;
+  padding-right: 20px;
+}
+
+.cost {
+  text-align: right;
 }

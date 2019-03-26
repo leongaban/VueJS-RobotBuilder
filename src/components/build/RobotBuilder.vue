@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="content">
+    <button class="add-cart" @click="addToCart()">Add to Cart</button>
     <div class="top-row">
       <div class="top part">
         <div class="robot-name">
@@ -35,12 +36,28 @@
         <button class="next-selector" @click="selectNext('bases')">&#9660;</button>
       </div>
     </div>
+    <div>
+      <h1>Cart</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Robot</th>
+            <th class="cost">Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(robot, index) in cart" :key="index">
+            <td>{{robot.head.title}}</td>
+            <td class="cost">{{robot.cost}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
 <script>
 import availableParts from '../../data/parts';
-import './_robotBuilder.scss';
 
 function getPreviousValidIndex(index, length) {
   const deprecatedIndex = index - 1;
@@ -57,6 +74,7 @@ export default {
   data() {
     return {
       availableParts,
+      cart: [],
       selectedIndexs: {
         heads: 0,
         leftArms: 0,
@@ -78,6 +96,17 @@ export default {
     }
   },
   methods: {
+    addToCart() {
+      const robot = this.selectedRobot;
+      const cost =
+        robot.head.cost +
+        robot.leftArm.cost +
+        robot.rightArm.cost +
+        robot.torso.cost +
+        robot.base.cost;
+
+      this.cart.push(Object.assign({}, robot, { cost }));
+    },
     selectNext(type) {
       const part = type === 'leftArms' || type === 'rightArms' ? 'arms' : type;
       this.selectedIndexs[type] =
@@ -91,3 +120,7 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+  @import "./_robotBuilder.scss";
+</style>
