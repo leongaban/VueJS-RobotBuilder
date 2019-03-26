@@ -4,7 +4,7 @@
       <div class="top part">
         <div class="robot-name">
           {{selectedRobot.head.title}}
-          <!-- <span v-if="selectNext.head.onSale" class="sale">Sale!</span> -->
+          <span v-if="selectedRobot.head.onSale" class="sale">Sale!</span>
         </div>
         <img :src="selectedRobot.head.src" title="head"/>
         <button class="prev-selector" @click="selectPrevious('heads')">&#9668;</button>
