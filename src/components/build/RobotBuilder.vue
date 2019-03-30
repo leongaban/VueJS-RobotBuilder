@@ -89,8 +89,6 @@ export default {
         robot.torso.cost +
         robot.base.cost;
 
-      console.log('cost', cost)
-
       this.cart.push(Object.assign({}, robot, { cost }))
     }
   }
