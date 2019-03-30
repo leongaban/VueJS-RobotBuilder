@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import { HomePage } from '@/components'
-import RobotBuilder from '@/components/build/RobotBuilder.vue'
+import { HomePage, RobotBuilder } from '@/components'
 
 Vue.use(Router)
 
